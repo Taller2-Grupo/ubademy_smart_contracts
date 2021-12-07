@@ -1,2 +1,2 @@
-release: npm run deploy-kovan
+release: npm i
 web: npm run start
