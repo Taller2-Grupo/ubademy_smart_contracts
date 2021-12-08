@@ -1,1 +1,1 @@
-web: npm install ; npm run deploy-kovan ; npm run start
+web: npm run deploy-kovan ; npm run start
