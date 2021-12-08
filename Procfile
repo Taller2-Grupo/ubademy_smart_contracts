@@ -1,1 +1,2 @@
-web: npm run deploy-kovan -- --reset && npm start
+release: npm run deploy-kovan -- --reset
+web: npm start
