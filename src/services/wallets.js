@@ -28,14 +28,16 @@ const getWalletsData = () => () => {
   return accounts;
 };
 
-const getWalletData = () => index => {
-  return accounts[index - 1];
+const getWalletData = () => address => {
+  return accounts.find((value, idx, obj) => value.address == address);
 };
 
-const getWallet = ({}) => index => {
+const getWallet = ({}) => address => {
   const provider = new ethers.providers.InfuraProvider("kovan", process.env.INFURA_API_KEY);
 
-  return new ethers.Wallet(accounts[index - 1].privateKey, provider);
+  let wallet = accounts.find((value, idx, obj) => value.address == address);
+
+  return new ethers.Wallet(wallet.privateKey, provider);
 };
 
 module.exports = ({ config }) => ({
