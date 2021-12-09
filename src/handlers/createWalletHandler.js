@@ -1,14 +1,6 @@
 function schema() {
   return {
-    params: {
-      type: "object",
-      properties: {
-        id: {
-          type: "integer",
-        },
-      },
-    },
-    required: ["id"],
+    params: {},
   };
 }
 

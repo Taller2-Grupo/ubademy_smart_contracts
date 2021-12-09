@@ -18,6 +18,7 @@ const deposit = ({ config }) => async (senderWallet, amountToSend) => {
       const firstEvent = receipt && receipt.events && receipt.events[0];
       console.log(firstEvent);
       if (firstEvent && firstEvent.event == "DepositMade") {
+        // AGREGAR A LA TABLA
         deposits[tx.hash] = {
           senderAddress: firstEvent.args.sender,
           amountSent: firstEvent.args.amount,
@@ -40,6 +41,7 @@ const deposit = ({ config }) => async (senderWallet, amountToSend) => {
 };
 
 const getDepositReceipt = ({}) => async depositTxHash => {
+  // GET A LA TABLA
   return deposits[depositTxHash];
 };
 
